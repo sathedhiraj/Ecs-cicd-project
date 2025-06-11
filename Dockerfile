@@ -1,9 +1,11 @@
 #Base Image 
-FROM nginx:alpine 
+FROM public.ecr.aws/nginx/nginx:latest
+
+LABEL maintainer="Lasantha" 
 
 COPY index.html /usr/share/nginx/html
 
 EXPOSE 80
 
-#START Nginx server
-CMD ["nginx", "-g" , "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
+
